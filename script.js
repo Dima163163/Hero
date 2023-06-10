@@ -42,7 +42,7 @@ const renderElements = (data) => {
 	})
 }
 
-const movieSearch = async (data, word) => { // Вариант нормальный
+const movieSearch = async (data, word) => { 
     const response = await data(url);
     if(!word) {
         renderElements(response)
