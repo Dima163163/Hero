@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+}
+
+.content {
+	background-color: gray;
+	padding-bottom: 50px;
+}
+
+.link {
+	font-size: 30px;
+	text-decoration: none;
+	color: black;
+}
+
+.header-content {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container {
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+.heroes{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.card	{
+	padding: 20px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: aliceblue;
+}
+
+.photo {
+	width: 100%;
+	max-height: 400px;
+	margin-bottom:  20px;
+}
+
+.text {
+	font-size: 20px;
+	padding-bottom: 5px;
+}
