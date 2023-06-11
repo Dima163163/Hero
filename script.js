@@ -3,6 +3,7 @@ const block = document.querySelector('.heroes');
 const form = document.querySelector('form')
 const url = '../dbimage/dbHeroes.json'
 const input = document.querySelector('.header__search');
+const genderSelector = document.querySelector('.gender')
 
 const getData = async (url) => {
   return await fetch(url)
@@ -52,10 +53,26 @@ const movieSearch = async (data, word) => {
     const searchElements = response.filter(hero => hero.movies && hero.movies.some(movie => movie.toLowerCase().includes(word.toLowerCase())))
 
     renderElements(searchElements);
-    return;
+}
+
+const genderSearch = async (data, genderSelectorValue) => { 
+	const response = await data(url);
+
+	if(!genderSelectorValue) {
+			renderElements(response)
+			return;
+	}
+	
+	const searchGender = response.filter(hero => hero.gender.toLowerCase() == genderSelectorValue)
+
+	renderElements(searchGender);
 }
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault()
 		movieSearch(getData, input.value)
+})
+
+genderSelector.addEventListener('change', ()=> {
+		genderSearch(getData, genderSelector.value)
 })
